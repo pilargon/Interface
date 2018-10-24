@@ -40,13 +40,13 @@ namespace Interface_Sanitario
         //El método calculaSueldo devolverá el sueldo final ( si es medico se le sumará al sueldo base
         //una cantidad que será el nº de pacientes por 1.20 euros, si es enfermero se le sumará al
         //sueldo base 200 euros si es de UCI y nada si es de planta).
-        public string CalculaSueldo()
+        public double CalculaSueldo()
         {
-            return "El sueldo final del medico " + GetNombre() + " es " +(GetSueldoBase()+(GetNumeroPacientes()*1.20))+" euros.";
+            return GetSueldoBase()+(GetNumeroPacientes()*1.20);
         }
         public override string Mostrar()
         {
-           return base.Mostrar() + "Especialidad: " + especialidad + "\n"+CalculaSueldo()+"\n************************";
+            return "************************\n" + base.Mostrar() + "Especialidad: " + especialidad + "\n"+"El sueldo final es: "+ (CalculaSueldo() + (CalculaSueldo() * 0.01));
         }
        
     }

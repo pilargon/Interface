@@ -17,22 +17,56 @@ namespace Interface_Sanitario
             Enfermero e3 = new Enfermero("31234234M", "Antonia Perez", 1000, 21, "planta");
 
 
-            List<Medico> listaMedicos = new List<Medico>();
-            listaMedicos.Add(m1);
-            listaMedicos.Add(m2);
+            //List<Medico> listaMedicos = new List<Medico>();
+            //listaMedicos.Add(m1);
+            //listaMedicos.Add(m2);
 
-            List<Enfermero> listaEnfermeros = new List<Enfermero>();
-            listaEnfermeros.Add(e1);
-            listaEnfermeros.Add(e2);
-            listaEnfermeros.Add(e3);
+            //List<Enfermero> listaEnfermeros = new List<Enfermero>();
+            //listaEnfermeros.Add(e1);
+            //listaEnfermeros.Add(e2);
+            //listaEnfermeros.Add(e3);
 
-            foreach (Sanitario medico in listaMedicos)
+            List<Sanitario> sanitarios = new List<Sanitario>()
             {
-                Console.WriteLine(medico.Mostrar());
-            }
-            foreach (Sanitario enfermero in listaEnfermeros)
+                m1, m2, e1, e2, e3
+            };
+
+            //foreach (Sanitario medico in listaMedicos)
+            //{
+            //    Console.WriteLine(medico.Mostrar());
+            //    if (medico.Jubilable())
+            //    {
+            //        Console.WriteLine("Se puede jubilar");
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("No se puede jubilar");
+            //    }
+            //}
+            //foreach (Sanitario enfermero in listaEnfermeros)
+            //{
+            //    Console.WriteLine(enfermero.Mostrar());
+            //    if(enfermero.Jubilable())
+            //    {
+            //        Console.WriteLine("Se puede jubilar");
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("No se puede jubilar");
+            //    }
+
+            //}
+            foreach (Sanitario sanitario in sanitarios)
             {
-                Console.WriteLine(enfermero.Mostrar());
+                Console.WriteLine(sanitario.Mostrar());
+                if (sanitario.Jubilable())
+                {
+                    Console.WriteLine("Se puede jubilar");
+                }
+                else
+                {
+                    Console.WriteLine("No se puede jubilar");
+                }
             }
             Console.ReadLine();
 

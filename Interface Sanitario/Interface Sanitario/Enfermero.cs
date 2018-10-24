@@ -27,24 +27,25 @@ namespace Interface_Sanitario
             this.puesto = puesto;
         }
 
-        public string CalculaSueldo(string puesto)
+        public double CalculaSueldo(string puesto)
         {
             if (puesto == "UCI")
             {
-                return (GetSueldoBase() + 200) + " euros.";
+               return GetSueldoBase() + 200;
             }
             else if(puesto=="planta")
             {
-                return GetSueldoBase() + " euros.";
+                return GetSueldoBase();
             }
             else
             {
-                return "Puesto incorrecto";
+                Console.WriteLine("ERRRROR");
+                return 0;
             }
         }
         public override string Mostrar()
         {
-            return base.Mostrar() + "Puesto es: " + GetPuesto() + "\nSueldo final de " +GetNombre()+ " es " + CalculaSueldo(puesto)+"\n********************";
+            return "********************\n" + base.Mostrar() + "Puesto es: " + GetPuesto() + "\nSueldo final de " +GetNombre()+ " es " + (CalculaSueldo(puesto)+ (CalculaSueldo(puesto) * 0.01));
         }
 
     }

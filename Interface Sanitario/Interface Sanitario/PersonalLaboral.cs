@@ -10,6 +10,6 @@ namespace Interface_Sanitario
     {
          bool Jubilable();
          string Mostrar();
-         string CalculaSueldo();
+         double CalculaSueldo();
     }
 }

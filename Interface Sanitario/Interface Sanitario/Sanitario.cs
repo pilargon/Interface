@@ -11,7 +11,6 @@ namespace Interface_Sanitario
         private string dni, nombre;
         private double sueldoBase;
         private int edad;
-        private bool jubilar;
 
         public Sanitario()
         {
@@ -79,29 +78,24 @@ namespace Interface_Sanitario
             return "Datos del sanitario:\n"+ "Dni: " + dni + "\nNombre: " + nombre + "\nEdad: " + edad + "\n";
         }
 
-        public bool Jubilable(int edad)
+        public bool Jubilable()
         {
             if (edad >= 65)
             {
-                Console.WriteLine("El sanitario " + GetNombre() + " se va a jubilar");
-                return jubilar = true;
+                //Console.WriteLine("El sanitario " + GetNombre() + " se va a jubilar");
+                return true;
             }
             else
             {
-                Console.WriteLine("El sanitario " + GetNombre() + " no se va a jubilar");
-                return jubilar = false;
+                //Console.WriteLine("El sanitario " + GetNombre() + " no se va a jubilar");
+                return false;
             }
-            throw new NotImplementedException();
+           
         }
 
-        public string CalculaSueldo()
+        public double CalculaSueldo()
         {
 
-            throw new NotImplementedException();
-        }
-
-        public bool Jubilable()
-        {
             throw new NotImplementedException();
         }
     }
